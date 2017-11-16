@@ -17,6 +17,21 @@
 		B82181A21FBC8F1E003FFA22 /* Coupon.swift in Sources */ = {isa = PBXBuildFile; fileRef = B82181A11FBC8F1E003FFA22 /* Coupon.swift */; };
 		B82181A41FBC8F2D003FFA22 /* Section.swift in Sources */ = {isa = PBXBuildFile; fileRef = B82181A31FBC8F2D003FFA22 /* Section.swift */; };
 		B82181A61FBC8F3C003FFA22 /* IBeacon.swift in Sources */ = {isa = PBXBuildFile; fileRef = B82181A51FBC8F3C003FFA22 /* IBeacon.swift */; };
+		B8D2D4011FBD761D00B50857 /* DataLoader.swift in Sources */ = {isa = PBXBuildFile; fileRef = B8D2D4001FBD761D00B50857 /* DataLoader.swift */; };
+		B8D2D4021FBD761D00B50857 /* DataLoader.swift in Sources */ = {isa = PBXBuildFile; fileRef = B8D2D4001FBD761D00B50857 /* DataLoader.swift */; };
+		B8D2D4041FBD765400B50857 /* QRCodeGenerator.swift in Sources */ = {isa = PBXBuildFile; fileRef = B8D2D4031FBD765400B50857 /* QRCodeGenerator.swift */; };
+		B8D2D4051FBD765400B50857 /* QRCodeGenerator.swift in Sources */ = {isa = PBXBuildFile; fileRef = B8D2D4031FBD765400B50857 /* QRCodeGenerator.swift */; };
+		B8D2D4071FBD766C00B50857 /* IBeaconReceiver.swift in Sources */ = {isa = PBXBuildFile; fileRef = B8D2D4061FBD766C00B50857 /* IBeaconReceiver.swift */; };
+		B8D2D4081FBD766C00B50857 /* IBeaconReceiver.swift in Sources */ = {isa = PBXBuildFile; fileRef = B8D2D4061FBD766C00B50857 /* IBeaconReceiver.swift */; };
+		B8D2D40A1FBD768900B50857 /* PriorityProductList.swift in Sources */ = {isa = PBXBuildFile; fileRef = B8D2D4091FBD768900B50857 /* PriorityProductList.swift */; };
+		B8D2D40B1FBD768900B50857 /* PriorityProductList.swift in Sources */ = {isa = PBXBuildFile; fileRef = B8D2D4091FBD768900B50857 /* PriorityProductList.swift */; };
+		B8D2D40D1FBD769F00B50857 /* ShoppingCart.swift in Sources */ = {isa = PBXBuildFile; fileRef = B8D2D40C1FBD769F00B50857 /* ShoppingCart.swift */; };
+		B8D2D40E1FBD769F00B50857 /* ShoppingCart.swift in Sources */ = {isa = PBXBuildFile; fileRef = B8D2D40C1FBD769F00B50857 /* ShoppingCart.swift */; };
+		B8D2D4101FBD7E9F00B50857 /* TestDataLoader.swift in Sources */ = {isa = PBXBuildFile; fileRef = B8D2D40F1FBD7E9F00B50857 /* TestDataLoader.swift */; };
+		B8D2D4121FBD7FC100B50857 /* TestQRCodeGenerator.swift in Sources */ = {isa = PBXBuildFile; fileRef = B8D2D4111FBD7FC100B50857 /* TestQRCodeGenerator.swift */; };
+		B8D2D4141FBD808000B50857 /* TestIBeaconReceiver.swift in Sources */ = {isa = PBXBuildFile; fileRef = B8D2D4131FBD808000B50857 /* TestIBeaconReceiver.swift */; };
+		B8D2D4161FBD809100B50857 /* TestShoppingCart.swift in Sources */ = {isa = PBXBuildFile; fileRef = B8D2D4151FBD809100B50857 /* TestShoppingCart.swift */; };
+		B8D2D4181FBD80B000B50857 /* TestPriorityProductList.swift in Sources */ = {isa = PBXBuildFile; fileRef = B8D2D4171FBD80B000B50857 /* TestPriorityProductList.swift */; };
 		B8DC8F381FBCA7EF006DF9A1 /* ProductTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = B8DC8F371FBCA7EF006DF9A1 /* ProductTest.swift */; };
 		B8DC8F391FBCA881006DF9A1 /* Product.swift in Sources */ = {isa = PBXBuildFile; fileRef = B821819F1FBC8CFB003FFA22 /* Product.swift */; };
 		B8DC8F3A1FBCBA66006DF9A1 /* Section.swift in Sources */ = {isa = PBXBuildFile; fileRef = B82181A31FBC8F2D003FFA22 /* Section.swift */; };
@@ -49,6 +64,16 @@
 		B82181A11FBC8F1E003FFA22 /* Coupon.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Coupon.swift; sourceTree = "<group>"; };
 		B82181A31FBC8F2D003FFA22 /* Section.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Section.swift; sourceTree = "<group>"; };
 		B82181A51FBC8F3C003FFA22 /* IBeacon.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IBeacon.swift; sourceTree = "<group>"; };
+		B8D2D4001FBD761D00B50857 /* DataLoader.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataLoader.swift; sourceTree = "<group>"; };
+		B8D2D4031FBD765400B50857 /* QRCodeGenerator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QRCodeGenerator.swift; sourceTree = "<group>"; };
+		B8D2D4061FBD766C00B50857 /* IBeaconReceiver.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IBeaconReceiver.swift; sourceTree = "<group>"; };
+		B8D2D4091FBD768900B50857 /* PriorityProductList.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PriorityProductList.swift; sourceTree = "<group>"; };
+		B8D2D40C1FBD769F00B50857 /* ShoppingCart.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShoppingCart.swift; sourceTree = "<group>"; };
+		B8D2D40F1FBD7E9F00B50857 /* TestDataLoader.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TestDataLoader.swift; sourceTree = "<group>"; };
+		B8D2D4111FBD7FC100B50857 /* TestQRCodeGenerator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TestQRCodeGenerator.swift; sourceTree = "<group>"; };
+		B8D2D4131FBD808000B50857 /* TestIBeaconReceiver.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TestIBeaconReceiver.swift; sourceTree = "<group>"; };
+		B8D2D4151FBD809100B50857 /* TestShoppingCart.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TestShoppingCart.swift; sourceTree = "<group>"; };
+		B8D2D4171FBD80B000B50857 /* TestPriorityProductList.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TestPriorityProductList.swift; sourceTree = "<group>"; };
 		B8DC8F371FBCA7EF006DF9A1 /* ProductTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProductTest.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -106,6 +131,11 @@
 		B82181921FB4A6C6003FFA22 /* iShoppingCartTests */ = {
 			isa = PBXGroup;
 			children = (
+				B8D2D4171FBD80B000B50857 /* TestPriorityProductList.swift */,
+				B8D2D4151FBD809100B50857 /* TestShoppingCart.swift */,
+				B8D2D4131FBD808000B50857 /* TestIBeaconReceiver.swift */,
+				B8D2D4111FBD7FC100B50857 /* TestQRCodeGenerator.swift */,
+				B8D2D40F1FBD7E9F00B50857 /* TestDataLoader.swift */,
 				B8DC8F371FBCA7EF006DF9A1 /* ProductTest.swift */,
 				B82181951FB4A6C6003FFA22 /* Info.plist */,
 			);
@@ -119,6 +149,11 @@
 				B82181A11FBC8F1E003FFA22 /* Coupon.swift */,
 				B82181A31FBC8F2D003FFA22 /* Section.swift */,
 				B82181A51FBC8F3C003FFA22 /* IBeacon.swift */,
+				B8D2D4001FBD761D00B50857 /* DataLoader.swift */,
+				B8D2D4031FBD765400B50857 /* QRCodeGenerator.swift */,
+				B8D2D4061FBD766C00B50857 /* IBeaconReceiver.swift */,
+				B8D2D4091FBD768900B50857 /* PriorityProductList.swift */,
+				B8D2D40C1FBD769F00B50857 /* ShoppingCart.swift */,
 			);
 			path = domain;
 			sourceTree = "<group>";
@@ -230,9 +265,14 @@
 				B82181A21FBC8F1E003FFA22 /* Coupon.swift in Sources */,
 				B82181811FB4A6C6003FFA22 /* SecondViewController.swift in Sources */,
 				B82181A01FBC8CFB003FFA22 /* Product.swift in Sources */,
+				B8D2D4011FBD761D00B50857 /* DataLoader.swift in Sources */,
 				B82181A41FBC8F2D003FFA22 /* Section.swift in Sources */,
 				B821817D1FB4A6C6003FFA22 /* AppDelegate.swift in Sources */,
+				B8D2D40D1FBD769F00B50857 /* ShoppingCart.swift in Sources */,
+				B8D2D4041FBD765400B50857 /* QRCodeGenerator.swift in Sources */,
+				B8D2D4071FBD766C00B50857 /* IBeaconReceiver.swift in Sources */,
 				B821817F1FB4A6C6003FFA22 /* FirstViewController.swift in Sources */,
+				B8D2D40A1FBD768900B50857 /* PriorityProductList.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -241,10 +281,20 @@
 			buildActionMask = 2147483647;
 			files = (
 				B8DC8F3A1FBCBA66006DF9A1 /* Section.swift in Sources */,
+				B8D2D4161FBD809100B50857 /* TestShoppingCart.swift in Sources */,
+				B8D2D4101FBD7E9F00B50857 /* TestDataLoader.swift in Sources */,
+				B8D2D4141FBD808000B50857 /* TestIBeaconReceiver.swift in Sources */,
 				B8DC8F381FBCA7EF006DF9A1 /* ProductTest.swift in Sources */,
+				B8D2D4021FBD761D00B50857 /* DataLoader.swift in Sources */,
 				B8DC8F3C1FBCC7AB006DF9A1 /* IBeacon.swift in Sources */,
+				B8D2D40B1FBD768900B50857 /* PriorityProductList.swift in Sources */,
+				B8D2D4181FBD80B000B50857 /* TestPriorityProductList.swift in Sources */,
+				B8D2D40E1FBD769F00B50857 /* ShoppingCart.swift in Sources */,
 				B8DC8F391FBCA881006DF9A1 /* Product.swift in Sources */,
 				B8DC8F3B1FBCBA73006DF9A1 /* Coupon.swift in Sources */,
+				B8D2D4121FBD7FC100B50857 /* TestQRCodeGenerator.swift in Sources */,
+				B8D2D4081FBD766C00B50857 /* IBeaconReceiver.swift in Sources */,
+				B8D2D4051FBD765400B50857 /* QRCodeGenerator.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

@@ -38,6 +38,14 @@
                BlueprintName = "iShoppingCartTests"
                ReferencedContainer = "container:iShoppingCart.xcodeproj">
             </BuildableReference>
+            <SkippedTests>
+               <Test
+                  Identifier = "TestIBeaconReceiver">
+               </Test>
+               <Test
+                  Identifier = "TestQRCodeGenerator">
+               </Test>
+            </SkippedTests>
          </TestableReference>
       </Testables>
       <MacroExpansion>
