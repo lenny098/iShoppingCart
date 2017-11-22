@@ -39,12 +39,11 @@ class ProductTest: XCTestCase {
     }
     
     func testCoupon() {
-        let c = Coupon(id: 0, name: "Sample Coupon", productCount: 2, discount: 0.5) // Buy 1 get 1 free
+        let c = Coupon(name: "Buy 1 get 1 free", productCount: 2, discount: -5.5)
         let p = Product(id : 0, name : "Sample Product", price : 5.5, section : "Sample Section", coupon : c)
         XCTAssertNotNil(p.coupon)
         
         let c2 = p.coupon!
-        XCTAssertEqual(c.id, c2.id)
         XCTAssertEqual(c.name, c2.name)
         XCTAssertEqual(c.productCount, c2.productCount)
         XCTAssertEqual(c.discount, c2.discount)

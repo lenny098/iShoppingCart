@@ -74,6 +74,8 @@
 		B8D2D4131FBD808000B50857 /* TestIBeaconReceiver.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TestIBeaconReceiver.swift; sourceTree = "<group>"; };
 		B8D2D4151FBD809100B50857 /* TestShoppingCart.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TestShoppingCart.swift; sourceTree = "<group>"; };
 		B8D2D4171FBD80B000B50857 /* TestPriorityProductList.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TestPriorityProductList.swift; sourceTree = "<group>"; };
+		B8D2D4191FC60E5400B50857 /* products.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = products.json; sourceTree = "<group>"; };
+		B8D2D41A1FC60F4500B50857 /* beacons.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = beacons.json; sourceTree = "<group>"; };
 		B8DC8F371FBCA7EF006DF9A1 /* ProductTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProductTest.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -98,6 +100,8 @@
 		B82181701FB4A6C5003FFA22 = {
 			isa = PBXGroup;
 			children = (
+				B8D2D41A1FC60F4500B50857 /* beacons.json */,
+				B8D2D4191FC60E5400B50857 /* products.json */,
 				B821817B1FB4A6C6003FFA22 /* iShoppingCart */,
 				B82181921FB4A6C6003FFA22 /* iShoppingCartTests */,
 				B821817A1FB4A6C6003FFA22 /* Products */,

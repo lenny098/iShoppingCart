@@ -1,0 +1,13 @@
+{
+    "Beacons":
+    [
+        {
+            "uuid": 0,
+            "section": "Snacks"
+        },
+        {
+            "uuid": 1,
+            "section": "Soft Drinks"
+        }
+    ]
+}

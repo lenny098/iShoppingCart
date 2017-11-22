@@ -1,0 +1,24 @@
+{
+    "Products":
+    [
+     {
+        "id": 0,
+        "name": "Potato Chips",
+        "price": 5.5,
+        "section": "Snacks",
+        "coupon":
+        {
+            "name": "Buy 1 get 1 free",
+            "count": 2,
+            "discount": -5.5
+        }
+     },
+     {
+        "id": 1,
+        "name": "Biscuits",
+        "price": 7.0,
+        "section": "Snacks",
+        "coupon": null
+     }
+    ]
+}
