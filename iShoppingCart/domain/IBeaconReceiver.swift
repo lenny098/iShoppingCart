@@ -13,7 +13,7 @@ class IBeaconReceiver
     static var iBeacons: [IBeacon] = []
     
     static func getNearby() -> [IBeacon] {
-        // TODO
-        return []
+        // TODO: Below is just for testing
+        return [IBeacon(uuid: 12345, section: "Section 2")]
     }
 }

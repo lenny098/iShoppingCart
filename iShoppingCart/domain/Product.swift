@@ -8,8 +8,12 @@
 
 import Foundation
 
-class Product: Equatable
+class Product: Equatable, Hashable
 {
+    var hashValue: Int {
+        return id.hashValue
+    }
+    
     let id: Int
     let name: String
     let price: Double

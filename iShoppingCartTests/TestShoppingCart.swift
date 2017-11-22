@@ -53,7 +53,24 @@ class TestShoppingCart: XCTestCase {
         let product2 = Product(id: 1, name: "Product 2", price: 4.5, section: "Section 1", coupon: nil)
         cart.addProduct(product: product1)
         cart.addProduct(product: product2)
+        cart.addProduct(product: product1)
         
-        XCTAssertEqual(cart.getTotalPrice(), 20.0)
+        XCTAssertEqual(cart.getTotalPrice(), 15.5)
+    }
+    
+    func testTotalPriceWithCoupon() {
+        let cart = ShoppingCart()
+        
+        XCTAssertEqual(cart.getTotalPrice(), 0.0)
+        
+        let coupon1 = Coupon(id: 0, name: "Coupon 1", productCount: 2, discount: -5.5) // Buy 1 get 1 free
+        let product1 = Product(id: 0, name: "Product 1", price: 5.5, section: "Section 1", coupon: coupon1)
+        let product2 = Product(id: 1, name: "Product 2", price: 4.5, section: "Section 1", coupon: nil)
+        cart.addProduct(product: product1)
+        cart.addProduct(product: product1)
+        cart.addProduct(product: product2)
+        cart.addProduct(product: product1)
+        
+        XCTAssertEqual(cart.getTotalPrice(), 15.5)
     }
 }

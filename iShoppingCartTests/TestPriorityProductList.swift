@@ -29,12 +29,14 @@ class TestPriorityProductList: XCTestCase {
     }
     
     func testUpdateList() {
-        class IBeaconReceiver
-        {
-            static func getNearby() -> [IBeacon] {
-                return [IBeacon(uuid: 12345, section: "Section 2")]
-            }
-        }
+        // TODO: How to create a stub correctly ?
+        
+//        class IBeaconReceiver
+//        {
+//            static func getNearby() -> [IBeacon] {
+//                return [IBeacon(uuid: 12345, section: "Section 2")]
+//            }
+//        }
         
         let p1 = Product(id: 0, name: "Product 1", price: 5.5, section: "Section 1", coupon: nil)
         let p2 = Product(id: 1, name: "Product 2", price: 4.5, section: "Section 2", coupon: nil)

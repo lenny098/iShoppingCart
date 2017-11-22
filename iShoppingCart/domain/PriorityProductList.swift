@@ -21,6 +21,19 @@ class PriorityProductList
     }
     
     func updateList() {
-        // TODO
+        let nearbyBeacons = IBeaconReceiver.getNearby()
+        
+        // getNearby() should return a list of beacons sorted in descending signal strength
+        for beaon in nearbyBeacons.reversed()
+        {
+            let filtered = products.filter({(product) -> Bool in product.section == beaon.section})
+            for product in filtered
+            {
+                if let i = products.index(of: product)
+                {
+                    products.insert(products.remove(at: i), at: 0)
+                }
+            }
+        }
     }
 }

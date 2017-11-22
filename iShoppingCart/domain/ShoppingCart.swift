@@ -29,7 +29,19 @@ class ShoppingCart
     }
     
     func getTotalPrice() -> Double {
-        // TODO
-        return 0
+        var total = 0.0
+        
+        var productCounts: [Product: Int] = [:]
+        products.forEach({productCounts[$0, default: 0] += 1})
+        
+        for product in Set<Product>(products)
+        {
+            total += Double(productCounts[product]!) * product.price
+            if let coupon = product.coupon
+            {
+                total += Double(productCounts[product]! / coupon.productCount) * coupon.discount
+            }
+        }
+        return total
     }
 }
