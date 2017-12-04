@@ -2,6 +2,12 @@
 <Workspace
    version = "1.0">
    <FileRef
+      location = "group:../iShoppingCart/Resources/beacons.json">
+   </FileRef>
+   <FileRef
+      location = "group:../iShoppingCart/Resources/products.json">
+   </FileRef>
+   <FileRef
       location = "self:iShoppingCart.xcodeproj">
    </FileRef>
 </Workspace>

@@ -17,6 +17,8 @@
 		B82181A21FBC8F1E003FFA22 /* Coupon.swift in Sources */ = {isa = PBXBuildFile; fileRef = B82181A11FBC8F1E003FFA22 /* Coupon.swift */; };
 		B82181A41FBC8F2D003FFA22 /* Section.swift in Sources */ = {isa = PBXBuildFile; fileRef = B82181A31FBC8F2D003FFA22 /* Section.swift */; };
 		B82181A61FBC8F3C003FFA22 /* IBeacon.swift in Sources */ = {isa = PBXBuildFile; fileRef = B82181A51FBC8F3C003FFA22 /* IBeacon.swift */; };
+		B85A9D371FD55206000E81D3 /* beacons.json in Resources */ = {isa = PBXBuildFile; fileRef = B85A9D351FD55205000E81D3 /* beacons.json */; };
+		B85A9D381FD55206000E81D3 /* products.json in Resources */ = {isa = PBXBuildFile; fileRef = B85A9D361FD55205000E81D3 /* products.json */; };
 		B8D2D4011FBD761D00B50857 /* DataLoader.swift in Sources */ = {isa = PBXBuildFile; fileRef = B8D2D4001FBD761D00B50857 /* DataLoader.swift */; };
 		B8D2D4021FBD761D00B50857 /* DataLoader.swift in Sources */ = {isa = PBXBuildFile; fileRef = B8D2D4001FBD761D00B50857 /* DataLoader.swift */; };
 		B8D2D4041FBD765400B50857 /* QRCodeGenerator.swift in Sources */ = {isa = PBXBuildFile; fileRef = B8D2D4031FBD765400B50857 /* QRCodeGenerator.swift */; };
@@ -64,6 +66,8 @@
 		B82181A11FBC8F1E003FFA22 /* Coupon.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Coupon.swift; sourceTree = "<group>"; };
 		B82181A31FBC8F2D003FFA22 /* Section.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Section.swift; sourceTree = "<group>"; };
 		B82181A51FBC8F3C003FFA22 /* IBeacon.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IBeacon.swift; sourceTree = "<group>"; };
+		B85A9D351FD55205000E81D3 /* beacons.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = beacons.json; sourceTree = "<group>"; };
+		B85A9D361FD55205000E81D3 /* products.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = products.json; sourceTree = "<group>"; };
 		B8D2D4001FBD761D00B50857 /* DataLoader.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataLoader.swift; sourceTree = "<group>"; };
 		B8D2D4031FBD765400B50857 /* QRCodeGenerator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QRCodeGenerator.swift; sourceTree = "<group>"; };
 		B8D2D4061FBD766C00B50857 /* IBeaconReceiver.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IBeaconReceiver.swift; sourceTree = "<group>"; };
@@ -74,8 +78,6 @@
 		B8D2D4131FBD808000B50857 /* TestIBeaconReceiver.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TestIBeaconReceiver.swift; sourceTree = "<group>"; };
 		B8D2D4151FBD809100B50857 /* TestShoppingCart.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TestShoppingCart.swift; sourceTree = "<group>"; };
 		B8D2D4171FBD80B000B50857 /* TestPriorityProductList.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TestPriorityProductList.swift; sourceTree = "<group>"; };
-		B8D2D4191FC60E5400B50857 /* products.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = products.json; sourceTree = "<group>"; };
-		B8D2D41A1FC60F4500B50857 /* beacons.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = beacons.json; sourceTree = "<group>"; };
 		B8DC8F371FBCA7EF006DF9A1 /* ProductTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProductTest.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -100,8 +102,8 @@
 		B82181701FB4A6C5003FFA22 = {
 			isa = PBXGroup;
 			children = (
-				B8D2D41A1FC60F4500B50857 /* beacons.json */,
-				B8D2D4191FC60E5400B50857 /* products.json */,
+				B85A9D351FD55205000E81D3 /* beacons.json */,
+				B85A9D361FD55205000E81D3 /* products.json */,
 				B821817B1FB4A6C6003FFA22 /* iShoppingCart */,
 				B82181921FB4A6C6003FFA22 /* iShoppingCartTests */,
 				B821817A1FB4A6C6003FFA22 /* Products */,
@@ -245,9 +247,11 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				B85A9D381FD55206000E81D3 /* products.json in Resources */,
 				B82181891FB4A6C6003FFA22 /* LaunchScreen.storyboard in Resources */,
 				B82181861FB4A6C6003FFA22 /* Assets.xcassets in Resources */,
 				B82181841FB4A6C6003FFA22 /* Main.storyboard in Resources */,
+				B85A9D371FD55206000E81D3 /* beacons.json in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -443,11 +447,14 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = "";
 				INFOPLIST_FILE = iShoppingCart/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = com.group8.iShoppingCart;
+				PRODUCT_BUNDLE_IDENTIFIER = com.cmsc5736group8.iShoppingcart;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE_SPECIFIER = "";
 				SWIFT_VERSION = 4.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
@@ -457,11 +464,14 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = "";
 				INFOPLIST_FILE = iShoppingCart/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = com.group8.iShoppingCart;
+				PRODUCT_BUNDLE_IDENTIFIER = com.cmsc5736group8.iShoppingcart;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE_SPECIFIER = "";
 				SWIFT_VERSION = 4.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
