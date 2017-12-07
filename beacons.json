@@ -2,11 +2,11 @@
     "Beacons":
     [
         {
-            "uuid": 0,
+            "uuid": "B5B182C7-EAB1-4988-AA99-B5C1517008D9",
             "section": "Snacks"
         },
         {
-            "uuid": 1,
+            "uuid": "1",
             "section": "Soft Drinks"
         }
     ]

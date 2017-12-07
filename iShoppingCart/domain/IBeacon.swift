@@ -10,10 +10,10 @@ import Foundation
 
 class IBeacon : Equatable
 {
-    let uuid : Int
+    let uuid : String
     let section : Section
     
-    init(uuid: Int, section: String) {
+    init(uuid: String, section: String) {
         self.uuid = uuid
         self.section = Section(name: section)
     }
