@@ -8,7 +8,6 @@
 
 /* Begin PBXBuildFile section */
 		B821817D1FB4A6C6003FFA22 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = B821817C1FB4A6C6003FFA22 /* AppDelegate.swift */; };
-		B821817F1FB4A6C6003FFA22 /* FirstViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B821817E1FB4A6C6003FFA22 /* FirstViewController.swift */; };
 		B82181811FB4A6C6003FFA22 /* SecondViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B82181801FB4A6C6003FFA22 /* SecondViewController.swift */; };
 		B82181841FB4A6C6003FFA22 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B82181821FB4A6C6003FFA22 /* Main.storyboard */; };
 		B82181861FB4A6C6003FFA22 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = B82181851FB4A6C6003FFA22 /* Assets.xcassets */; };
@@ -53,7 +52,6 @@
 /* Begin PBXFileReference section */
 		B82181791FB4A6C6003FFA22 /* iShoppingCart.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = iShoppingCart.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		B821817C1FB4A6C6003FFA22 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		B821817E1FB4A6C6003FFA22 /* FirstViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FirstViewController.swift; sourceTree = "<group>"; };
 		B82181801FB4A6C6003FFA22 /* SecondViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SecondViewController.swift; sourceTree = "<group>"; };
 		B82181831FB4A6C6003FFA22 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		B82181851FB4A6C6003FFA22 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -123,7 +121,6 @@
 			children = (
 				B821819E1FBC8CDE003FFA22 /* domain */,
 				B821817C1FB4A6C6003FFA22 /* AppDelegate.swift */,
-				B821817E1FB4A6C6003FFA22 /* FirstViewController.swift */,
 				B82181801FB4A6C6003FFA22 /* SecondViewController.swift */,
 				B82181821FB4A6C6003FFA22 /* Main.storyboard */,
 				B8EEE1531FD9B97F005EC202 /* ProductTableViewController.swift */,
@@ -278,7 +275,6 @@
 				B821817D1FB4A6C6003FFA22 /* AppDelegate.swift in Sources */,
 				B8D2D40D1FBD769F00B50857 /* ShoppingCart.swift in Sources */,
 				B8D2D4041FBD765400B50857 /* QRCodeGenerator.swift in Sources */,
-				B821817F1FB4A6C6003FFA22 /* FirstViewController.swift in Sources */,
 				B8D2D40A1FBD768900B50857 /* PriorityProductList.swift in Sources */,
 				B8EEE1541FD9B97F005EC202 /* ProductTableViewController.swift in Sources */,
 			);
