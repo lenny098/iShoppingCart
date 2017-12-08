@@ -8,8 +8,12 @@
 
 import Foundation
 
-class Section: Equatable
+class Section: Equatable, Hashable
 {
+    var hashValue: Int {
+        return name.hashValue
+    }
+    
     let name: String
     
     init(name: String) {

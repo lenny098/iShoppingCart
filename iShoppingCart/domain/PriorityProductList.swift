@@ -10,27 +10,52 @@ import Foundation
 
 class PriorityProductList
 {
-    private var products: [Product]
+    private var products = [Section: [Product]]()
+    private var sections = [Section]()
     
     init(products: [Product]) {
-        self.products = products
+        for product in products {
+            if self.products[product.section] != nil
+            {
+                self.products[product.section]!.append(product)
+            }
+            else
+            {
+                self.products[product.section] = [product]
+            }
+            if !sections.contains(product.section)
+            {
+                self.sections.append(product.section)
+            }
+        }
     }
     
-    func getProducts() -> [Product] {
-        return products
+    func getSections() -> [Section] {
+        return sections
     }
     
-    func updateList(nearbyBeacons: [IBeacon]) {        
+    func getProductsBySection(priority:Int) -> [Product] {
+        return products[sections[priority]] ?? []
+    }
+    
+    func getAllProducts() -> [Product] {
+        var result = [Product]()
+        for section in sections {
+            result += products[section]!
+        }
+        return result
+    }
+    
+    func updateList(nearbyBeacons: [IBeacon]) {
         // getNearby() should return a list of beacons sorted in descending signal strength
         for beacon in nearbyBeacons.reversed()
         {
-            let filtered = products.filter({(product) -> Bool in product.section == beacon.section})
-            for product in filtered
+            print("updating section: \(beacon.section.name)")
+            if let i = sections.index(of: beacon.section)
             {
-                if let i = products.index(of: product)
-                {
-                    products.insert(products.remove(at: i), at: 0)
-                }
+                print("Beacon section: \(beacon.section)")
+                sections.insert(sections.remove(at: i), at: 0)
+                print("After update: sections[0] is \(sections[0].name)")
             }
         }
     }

@@ -19,6 +19,58 @@
         "price": 7.0,
         "section": "Snacks",
         "coupon": null
-     }
+     },
+     {
+         "id": 2,
+         "name": "Coke Classic",
+         "price": 9.9,
+         "section": "Soft Drinks",
+         "coupon": null
+     },
+     {
+         "id": 3,
+         "name": "Fanta",
+         "price": 9.9,
+         "section": "Soft Drinks",
+         "coupon":
+         {
+             "name": "40% off",
+             "count": 1,
+             "discount": -4.0
+         }
+     },
+     {
+         "id": 4,
+         "name": "Oreo",
+         "price": 14.9,
+         "section": "Snacks",
+         "coupon":
+         {
+             "name": "Buy 4 Get One Free",
+             "count": 5,
+             "discount": -14.9
+         }
+     },
+     {
+         "id": 5,
+         "name": "Coke Diet",
+         "price": 9.9,
+         "section": "Soft Drinks",
+         "coupon": null
+     },
+     {
+         "id": 6,
+         "name": "Sprite",
+         "price": 9.9,
+         "section": "Soft Drinks",
+         "coupon": null
+     },
+     {
+         "id": 7,
+         "name": "Pepsi",
+         "price": 9.9,
+         "section": "Soft Drinks",
+         "coupon": null
+     },
     ]
 }
