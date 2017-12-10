@@ -10,36 +10,50 @@ import Foundation
 
 class ShoppingCart
 {
-    private var products: [Product] = []
+    private var products: [Product: Int] = [:]
     
     func getProducts() -> [Product] {
-        return products
+        return [Product](products.keys)
     }
     
     func addProduct(product: Product) {
-        products.append(product)
+        if products[product] != nil {
+            products[product]! += 1
+        }
+        else
+        {
+            products[product] = 1
+        }
     }
     
-    func removeProduct(id: Int) -> Bool {
-        if let i = products.index(where: {$0.id == id}) {
-            products.remove(at: i)
-            return true
+    func removeProduct(product: Product) {
+        products[product]! -= 1
+        if products[product]! < 1 {
+            products[product] = nil
         }
-        return false
+    }
+    
+    func clear() {
+        products.removeAll()
+    }
+    
+    func getCount(product: Product) -> Int {
+        return products[product] ?? 0
+    }
+    
+    func getActivatedDiscount(product: Product) -> Int {
+        return products[product]! / (product.coupon?.productCount)!
     }
     
     func getTotalPrice() -> Double {
         var total = 0.0
         
-        var productCounts: [Product: Int] = [:]
-        products.forEach({productCounts[$0, default: 0] += 1})
-        
-        for product in Set<Product>(products)
+        for (product, count) in products
         {
-            total += Double(productCounts[product]!) * product.price
+            total += Double(count) * product.price
             if let coupon = product.coupon
             {
-                total += Double(productCounts[product]! / coupon.productCount) * coupon.discount
+                total += Double(count / coupon.productCount) * coupon.discount
             }
         }
         return total

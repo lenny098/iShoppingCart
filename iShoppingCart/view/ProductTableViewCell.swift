@@ -12,7 +12,6 @@ class ProductTableViewCell: UITableViewCell {
     @IBOutlet weak var nameLabel: UILabel!
     @IBOutlet weak var priceLabel: UILabel!
     @IBOutlet weak var countLabel: UILabel!
-    @IBOutlet weak var addToCartButton: UIButton!
     @IBOutlet weak var discountLabel: UILabel!
     
     var product: Product?
@@ -27,5 +26,13 @@ class ProductTableViewCell: UITableViewCell {
 
         // Configure the view for the selected state
     }
+    
+    @IBAction func addToCart(_ sender: UIButton)
+    {
+        AppDelegate.shoppingCart.addProduct(product: product!)
+        countLabel.text = String(AppDelegate.shoppingCart.getCount(product: product!))
+        NotificationCenter.default.post(name: NSNotification.Name(rawValue: "reloadCart"), object: nil)
 
+    }
+    
 }

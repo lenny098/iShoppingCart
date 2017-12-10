@@ -19,6 +19,8 @@ class ProductTableViewController: UITableViewController, CLLocationManagerDelega
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        NotificationCenter.default.addObserver(self, selector: #selector(reloadList), name: NSNotification.Name(rawValue: "reloadList"), object: nil)
+        
         locationManager.delegate = self
         
         if CLLocationManager.isMonitoringAvailable(for: CLBeaconRegion.self)
@@ -44,6 +46,10 @@ class ProductTableViewController: UITableViewController, CLLocationManagerDelega
 
         // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
         // self.navigationItem.rightBarButtonItem = self.editButtonItem
+    }
+    
+    @objc func reloadList() {
+        self.tableView.reloadData()
     }
     
     func locationManager(_ manager: CLLocationManager, didEnterRegion region: CLRegion) {
@@ -115,10 +121,21 @@ class ProductTableViewController: UITableViewController, CLLocationManagerDelega
         
         cell?.product = product
         cell?.nameLabel.text = product.name
-        cell?.priceLabel.text = String(format:"%.1f", product.price)
+        cell?.priceLabel.text = String(format:"$ %.1f", product.price)
+        let count = AppDelegate.shoppingCart.getCount(product: product)
+        if count > 0 {
+            cell?.countLabel.text = String(count)
+        }
+        else
+        {
+            cell?.countLabel.text = ""
+        }
+        
+        
         if let coupon = product.coupon
         {
             cell?.discountLabel.text = coupon.name
+            cell?.discountLabel.isHidden = false
             print("\(product.name) has coupon")
         }
         else

@@ -10,6 +10,8 @@ import UIKit
 
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate {
+    
+    static var shoppingCart = ShoppingCart()
 
     var window: UIWindow?
 

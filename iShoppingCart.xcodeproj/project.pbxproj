@@ -8,7 +8,6 @@
 
 /* Begin PBXBuildFile section */
 		B821817D1FB4A6C6003FFA22 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = B821817C1FB4A6C6003FFA22 /* AppDelegate.swift */; };
-		B82181811FB4A6C6003FFA22 /* SecondViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B82181801FB4A6C6003FFA22 /* SecondViewController.swift */; };
 		B82181841FB4A6C6003FFA22 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B82181821FB4A6C6003FFA22 /* Main.storyboard */; };
 		B82181861FB4A6C6003FFA22 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = B82181851FB4A6C6003FFA22 /* Assets.xcassets */; };
 		B82181891FB4A6C6003FFA22 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B82181871FB4A6C6003FFA22 /* LaunchScreen.storyboard */; };
@@ -19,6 +18,9 @@
 		B84E35E41FD994E400D067EB /* ProductTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = B84E35E31FD994E400D067EB /* ProductTableViewCell.swift */; };
 		B85A9D371FD55206000E81D3 /* beacons.json in Resources */ = {isa = PBXBuildFile; fileRef = B85A9D351FD55205000E81D3 /* beacons.json */; };
 		B85A9D381FD55206000E81D3 /* products.json in Resources */ = {isa = PBXBuildFile; fileRef = B85A9D361FD55205000E81D3 /* products.json */; };
+		B8A8623E1FDB280E00308510 /* CartTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = B8A8623D1FDB280E00308510 /* CartTableViewCell.swift */; };
+		B8A862401FDB283800308510 /* CartTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B8A8623F1FDB283800308510 /* CartTableViewController.swift */; };
+		B8A862421FDD020200308510 /* QRViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B8A862411FDD020200308510 /* QRViewController.swift */; };
 		B8D2D4011FBD761D00B50857 /* DataLoader.swift in Sources */ = {isa = PBXBuildFile; fileRef = B8D2D4001FBD761D00B50857 /* DataLoader.swift */; };
 		B8D2D4021FBD761D00B50857 /* DataLoader.swift in Sources */ = {isa = PBXBuildFile; fileRef = B8D2D4001FBD761D00B50857 /* DataLoader.swift */; };
 		B8D2D4041FBD765400B50857 /* QRCodeGenerator.swift in Sources */ = {isa = PBXBuildFile; fileRef = B8D2D4031FBD765400B50857 /* QRCodeGenerator.swift */; };
@@ -52,7 +54,6 @@
 /* Begin PBXFileReference section */
 		B82181791FB4A6C6003FFA22 /* iShoppingCart.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = iShoppingCart.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		B821817C1FB4A6C6003FFA22 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		B82181801FB4A6C6003FFA22 /* SecondViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SecondViewController.swift; sourceTree = "<group>"; };
 		B82181831FB4A6C6003FFA22 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		B82181851FB4A6C6003FFA22 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		B82181881FB4A6C6003FFA22 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
@@ -66,6 +67,9 @@
 		B84E35E31FD994E400D067EB /* ProductTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = ProductTableViewCell.swift; path = view/ProductTableViewCell.swift; sourceTree = "<group>"; };
 		B85A9D351FD55205000E81D3 /* beacons.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = beacons.json; sourceTree = "<group>"; };
 		B85A9D361FD55205000E81D3 /* products.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = products.json; sourceTree = "<group>"; };
+		B8A8623D1FDB280E00308510 /* CartTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = CartTableViewCell.swift; path = view/CartTableViewCell.swift; sourceTree = "<group>"; };
+		B8A8623F1FDB283800308510 /* CartTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = CartTableViewController.swift; path = view/CartTableViewController.swift; sourceTree = "<group>"; };
+		B8A862411FDD020200308510 /* QRViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = QRViewController.swift; path = view/QRViewController.swift; sourceTree = "<group>"; };
 		B8D2D4001FBD761D00B50857 /* DataLoader.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataLoader.swift; sourceTree = "<group>"; };
 		B8D2D4031FBD765400B50857 /* QRCodeGenerator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QRCodeGenerator.swift; sourceTree = "<group>"; };
 		B8D2D4091FBD768900B50857 /* PriorityProductList.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PriorityProductList.swift; sourceTree = "<group>"; };
@@ -121,8 +125,10 @@
 			children = (
 				B821819E1FBC8CDE003FFA22 /* domain */,
 				B821817C1FB4A6C6003FFA22 /* AppDelegate.swift */,
-				B82181801FB4A6C6003FFA22 /* SecondViewController.swift */,
 				B82181821FB4A6C6003FFA22 /* Main.storyboard */,
+				B8A8623D1FDB280E00308510 /* CartTableViewCell.swift */,
+				B8A8623F1FDB283800308510 /* CartTableViewController.swift */,
+				B8A862411FDD020200308510 /* QRViewController.swift */,
 				B8EEE1531FD9B97F005EC202 /* ProductTableViewController.swift */,
 				B84E35E31FD994E400D067EB /* ProductTableViewCell.swift */,
 				B82181851FB4A6C6003FFA22 /* Assets.xcassets */,
@@ -267,13 +273,15 @@
 			files = (
 				B82181A61FBC8F3C003FFA22 /* IBeacon.swift in Sources */,
 				B82181A21FBC8F1E003FFA22 /* Coupon.swift in Sources */,
-				B82181811FB4A6C6003FFA22 /* SecondViewController.swift in Sources */,
 				B82181A01FBC8CFB003FFA22 /* Product.swift in Sources */,
+				B8A862421FDD020200308510 /* QRViewController.swift in Sources */,
 				B8D2D4011FBD761D00B50857 /* DataLoader.swift in Sources */,
 				B84E35E41FD994E400D067EB /* ProductTableViewCell.swift in Sources */,
 				B82181A41FBC8F2D003FFA22 /* Section.swift in Sources */,
 				B821817D1FB4A6C6003FFA22 /* AppDelegate.swift in Sources */,
 				B8D2D40D1FBD769F00B50857 /* ShoppingCart.swift in Sources */,
+				B8A862401FDB283800308510 /* CartTableViewController.swift in Sources */,
+				B8A8623E1FDB280E00308510 /* CartTableViewCell.swift in Sources */,
 				B8D2D4041FBD765400B50857 /* QRCodeGenerator.swift in Sources */,
 				B8D2D40A1FBD768900B50857 /* PriorityProductList.swift in Sources */,
 				B8EEE1541FD9B97F005EC202 /* ProductTableViewController.swift in Sources */,
