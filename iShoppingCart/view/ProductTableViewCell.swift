@@ -32,7 +32,19 @@ class ProductTableViewCell: UITableViewCell {
         AppDelegate.shoppingCart.addProduct(product: product!)
         countLabel.text = String(AppDelegate.shoppingCart.getCount(product: product!))
         NotificationCenter.default.post(name: NSNotification.Name(rawValue: "reloadCart"), object: nil)
-
+        saveCart()
     }
     
+    private func saveCart()
+    {
+        let successful = NSKeyedArchiver.archiveRootObject(AppDelegate.shoppingCart, toFile: (ShoppingCart.ArchiveURL?.path)!)
+        if successful
+        {
+            print("Saved")
+        }
+        else
+        {
+            print("Saving Failed")
+        }
+    }
 }

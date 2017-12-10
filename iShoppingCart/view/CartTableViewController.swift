@@ -10,12 +10,22 @@ import UIKit
 
 class CartTableViewController: UITableViewController {
     @IBOutlet weak var checkoutPriceLabel: UILabel!
+    @IBOutlet weak var checkoutButton: UIBarButtonItem!
     
     override func viewDidLoad() {
         super.viewDidLoad()
         NotificationCenter.default.addObserver(self, selector: #selector(reloadCart), name: NSNotification.Name(rawValue: "reloadCart"), object: nil)
         
         checkoutPriceLabel.text = String(format:"Total: $ %.1f", AppDelegate.shoppingCart.getTotalPrice())
+        
+        if AppDelegate.shoppingCart.getProducts().isEmpty
+        {
+            checkoutButton.isEnabled = false
+        }
+        else
+        {
+            checkoutButton.isEnabled = true
+        }
 
         // Uncomment the following line to preserve selection between presentations
         // self.clearsSelectionOnViewWillAppear = false
@@ -24,9 +34,34 @@ class CartTableViewController: UITableViewController {
         // self.navigationItem.rightBarButtonItem = self.editButtonItem
     }
     
-    @objc func reloadCart() {
+    private func saveCart()
+    {
+        let successful = NSKeyedArchiver.archiveRootObject(AppDelegate.shoppingCart, toFile: (ShoppingCart.ArchiveURL?.path)!)
+        if successful
+        {
+            print("Saved")
+        }
+        else
+        {
+            print("Saving Failed")
+        }
+    }
+    
+    @objc func reloadCart()
+    {
         self.tableView.reloadData()
         checkoutPriceLabel.text = String(format:"Total: $ %.1f", AppDelegate.shoppingCart.getTotalPrice())
+        
+        if AppDelegate.shoppingCart.getProducts().isEmpty
+        {
+            checkoutButton.isEnabled = false
+        }
+        else
+        {
+            checkoutButton.isEnabled = true
+        }
+        
+        saveCart()
     }
     
     @IBAction func unwindToCart(sender: UIStoryboardSegue)
@@ -36,6 +71,7 @@ class CartTableViewController: UITableViewController {
         self.tableView.reloadData()
         NotificationCenter.default.post(name: NSNotification.Name(rawValue: "reloadList"), object: nil)
         print("Clearing Shopping Cart")
+        saveCart()
     }
 
     override func didReceiveMemoryWarning() {

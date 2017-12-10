@@ -9,10 +9,12 @@
 import UIKit
 
 class QRViewController: UIViewController {
-
+    @IBOutlet weak var qrView: UIImageView!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 
+        qrView.image = QRCodeGenerator.generate(shoppingCart: AppDelegate.shoppingCart)
         // Do any additional setup after loading the view.
     }
 

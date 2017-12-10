@@ -8,8 +8,11 @@
 
 import Foundation
 
-class ShoppingCart
+class ShoppingCart: NSObject, NSCoding
 {
+    static let DocumentDirectory = FileManager().urls(for: .documentDirectory, in: .userDomainMask).first
+    static let ArchiveURL = DocumentDirectory?.appendingPathComponent("shoppingCart", isDirectory: false)
+    
     private var products: [Product: Int] = [:]
     
     func getProducts() -> [Product] {
@@ -57,5 +60,19 @@ class ShoppingCart
             }
         }
         return total
+    }
+    
+    func encode(with aCoder: NSCoder)
+    {
+        aCoder.encode(products, forKey: "products")
+    }
+    
+    required convenience init?(coder aDecoder: NSCoder)
+    {
+        self.init()
+        if let products = aDecoder.decodeObject(forKey: "products") as? [Product: Int]
+        {
+            self.products = products
+        }
     }
 }

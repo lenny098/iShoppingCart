@@ -14,10 +14,17 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     static var shoppingCart = ShoppingCart()
 
     var window: UIWindow?
-
+    
+    private func loadCart() -> ShoppingCart?
+    {
+        return NSKeyedUnarchiver.unarchiveObject(withFile: (ShoppingCart.ArchiveURL?.path)!) as? ShoppingCart
+    }
 
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey: Any]?) -> Bool {
         // Override point for customization after application launch.
+        if let shoppingCart = loadCart() {
+            AppDelegate.shoppingCart = shoppingCart
+        }
         return true
     }
 
