@@ -30,9 +30,11 @@ class ProductTableViewCell: UITableViewCell {
     @IBAction func addToCart(_ sender: UIButton)
     {
         AppDelegate.shoppingCart.addProduct(product: product!)
-        countLabel.text = String(AppDelegate.shoppingCart.getCount(product: product!))
+        
         NotificationCenter.default.post(name: NSNotification.Name(rawValue: "reloadCart"), object: nil)
         saveCart()
+        
+        UIView.transition(with: countLabel, duration: 0.5, options: .transitionFlipFromBottom, animations: {self.countLabel.text = String(AppDelegate.shoppingCart.getCount(product: self.product!))}, completion: nil)
     }
     
     private func saveCart()

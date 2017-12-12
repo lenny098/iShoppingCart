@@ -35,13 +35,27 @@ class CartTableViewCell: UITableViewCell {
 
     @IBAction func removeProduct(_ sender: UIButton) {
         AppDelegate.shoppingCart.removeProduct(product: product!)
-        NotificationCenter.default.post(name: NSNotification.Name(rawValue: "reloadCart"), object: nil)
-        NotificationCenter.default.post(name: NSNotification.Name(rawValue: "reloadList"), object: nil)
+        update()
     }
     
     @IBAction func addProduct(_ sender: UIButton) {
         AppDelegate.shoppingCart.addProduct(product: product!)
-        NotificationCenter.default.post(name: NSNotification.Name(rawValue: "reloadCart"), object: nil)
-        NotificationCenter.default.post(name: NSNotification.Name(rawValue: "reloadList"), object: nil)
+        update()
+    }
+    
+    func update() {
+        let count = AppDelegate.shoppingCart.getCount(product: self.product!)
+        if count > 0 {
+            UIView.transition(with: countLabel, duration: 0.5, options: .transitionFlipFromBottom, animations: {self.countLabel.text = String(count)}, completion: nil)
+            UIView.transition(with: totalPriceLabel, duration: 0.5, options: .transitionFlipFromBottom, animations: {self.totalPriceLabel.text = String(format:"$ %5.1f", (self.product?.price)! * Double(count))}, completion: nil)
+            NotificationCenter.default.post(name: NSNotification.Name(rawValue: "reloadTotal"), object: nil)
+            NotificationCenter.default.post(name: NSNotification.Name(rawValue: "reloadList"), object: nil)
+        }
+        else
+        {
+            NotificationCenter.default.post(name: NSNotification.Name(rawValue: "reloadTotal"), object: nil)
+            NotificationCenter.default.post(name: NSNotification.Name(rawValue: "reloadCart"), object: nil)
+            NotificationCenter.default.post(name: NSNotification.Name(rawValue: "reloadList"), object: nil)
+        }
     }
 }

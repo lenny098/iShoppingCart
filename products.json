@@ -72,5 +72,64 @@
          "section": "Soft Drinks",
          "coupon": null
      },
+     {
+         "id": 8,
+         "name": "Milk",
+         "price": 19.9,
+         "section": "Dairy Product",
+         "coupon": null
+     },
+     {
+         "id": 9,
+         "name": "Cheese",
+         "price": 15.5,
+         "section": "Dairy Product",
+         "coupon":
+         {
+             "name": "20% off",
+             "count": 1,
+             "discount": -3.1
+         }
+     },
+     {
+         "id": 10,
+         "name": "Yogurt",
+         "price": 25.0,
+         "section": "Dairy Product",
+         "coupon": null
+     },
+     {
+         "id": 11,
+         "name": "Butter",
+         "price": 17.8,
+         "section": "Dairy Product",
+         "coupon": null
+     },
+     {
+         "id": 12,
+         "name": "Chicken Wings",
+         "price": 54.9,
+         "section": "Meat",
+         "coupon": null
+     },
+     {
+         "id": 13,
+         "name": "Beef Steak",
+         "price": 31.4,
+         "section": "Meat",
+         "coupon":
+         {
+             "name": "$80 for three",
+             "count": 3,
+             "discount": -14.2
+         }
+     },
+     {
+         "id": 14,
+         "name": "Pork Chop",
+         "price": 26.5,
+         "section": "Meat",
+         "coupon": null
+     },
     ]
 }

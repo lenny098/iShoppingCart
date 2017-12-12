@@ -15,6 +15,7 @@ class CartTableViewController: UITableViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         NotificationCenter.default.addObserver(self, selector: #selector(reloadCart), name: NSNotification.Name(rawValue: "reloadCart"), object: nil)
+        NotificationCenter.default.addObserver(self, selector: #selector(reloadTotal), name: NSNotification.Name(rawValue: "reloadTotal"), object: nil)
         
         checkoutPriceLabel.text = String(format:"Total: $ %.1f", AppDelegate.shoppingCart.getTotalPrice())
         
@@ -62,6 +63,11 @@ class CartTableViewController: UITableViewController {
         }
         
         saveCart()
+    }
+    
+    @objc func reloadTotal()
+    {
+        UIView.transition(with: checkoutPriceLabel, duration: 0.5, options: .transitionFlipFromBottom, animations: {self.checkoutPriceLabel.text = String(format:"Total: $ %.1f", AppDelegate.shoppingCart.getTotalPrice())}, completion: nil)
     }
     
     @IBAction func unwindToCart(sender: UIStoryboardSegue)

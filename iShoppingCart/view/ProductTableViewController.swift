@@ -30,7 +30,7 @@ class ProductTableViewController: UITableViewController, CLLocationManagerDelega
             for beacon in beaconList
             {
                 let uuid = UUID(uuidString: beacon.uuid)
-                let region = CLBeaconRegion(proximityUUID: uuid!, identifier: "")
+                let region = CLBeaconRegion(proximityUUID: uuid!, identifier: (uuid?.uuidString)!)
                 locationManager.startMonitoring(for: region)
                 
                 print("===== Start Monitoring For Beacons =====")
@@ -84,9 +84,20 @@ class ProductTableViewController: UITableViewController, CLLocationManagerDelega
                 nearbyBeacon.append(beaconList[index])
             }
         }
+        let oldList = [Section](priorityProductList.getSections())
         priorityProductList.updateList(nearbyBeacons: nearbyBeacon)
+        var indexSet = IndexSet()
         
-        self.tableView.reloadData()
+        
+        for i in 0..<oldList.count
+        {
+            if oldList[i] != priorityProductList.getSections()[i]
+            {
+                indexSet.insert(i)
+            }
+        }
+        
+        self.tableView.reloadSections(indexSet, with: .automatic)
         
         print("===== Beacon updated, reloading =====")
     }
@@ -144,7 +155,6 @@ class ProductTableViewController: UITableViewController, CLLocationManagerDelega
             print("\(product.name) has no coupon")
         }
         // Configure the cell...
-        
         
         return cell!
     }

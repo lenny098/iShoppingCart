@@ -2,8 +2,20 @@
     "Beacons":
     [
         {
+            "uuid": "B5B182C7-EAB1-4988-AA99-B5C1517008D7",
+            "section": "Snacks"
+        },
+        {
             "uuid": "B5B182C7-EAB1-4988-AA99-B5C1517008D9",
             "section": "Soft Drinks"
+        },
+        {
+            "uuid": "B5B182C7-EAB1-4988-AA99-B5C1517008D8",
+            "section": "Dairy Product"
+        },
+        {
+            "uuid": "B5B182C7-EAB1-4988-AA99-B5C1517008D6",
+            "section": "Meat"
         },
     ]
 }
