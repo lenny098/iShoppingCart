@@ -37,6 +37,8 @@ class ProductTableViewCell: UITableViewCell {
         UIView.transition(with: countLabel, duration: 0.5, options: .transitionFlipFromBottom, animations: {self.countLabel.text = String(AppDelegate.shoppingCart.getCount(product: self.product!))}, completion: nil)
     }
     
+    @IBAction func delItem(_ sender: UIButton) {
+    }
     private func saveCart()
     {
         let successful = NSKeyedArchiver.archiveRootObject(AppDelegate.shoppingCart, toFile: (ShoppingCart.ArchiveURL?.path)!)
