@@ -13,6 +13,7 @@ class ProductTableViewController: UITableViewController, CLLocationManagerDelega
     
     let locationManager = CLLocationManager()
     let beaconList = DataLoader.loadIBeacons()
+    let region = CLBeaconRegion(proximityUUID: UUID(uuidString: "B5B182C7-EAB1-4988-AA99-B5C1517008D9")!, identifier: "iBeacon")
     
     var priorityProductList = PriorityProductList(products: [])
 
@@ -27,14 +28,10 @@ class ProductTableViewController: UITableViewController, CLLocationManagerDelega
         {
             locationManager.requestAlwaysAuthorization()
             
-            for beacon in beaconList
-            {
-                let uuid = UUID(uuidString: beacon.uuid)
-                let region = CLBeaconRegion(proximityUUID: uuid!, identifier: (uuid?.uuidString)!)
-                locationManager.startMonitoring(for: region)
-                
-                print("===== Start Monitoring For Beacons =====")
-            }
+            //Assume all beacons has the same UUID
+            locationManager.startMonitoring(for: region)
+            
+            print("===== Start Monitoring For Region \(region)")
         }
         
         priorityProductList = PriorityProductList(products: DataLoader.loadProducts())
@@ -57,8 +54,8 @@ class ProductTableViewController: UITableViewController, CLLocationManagerDelega
         {
             if CLLocationManager.isRangingAvailable()
             {
-                locationManager.startRangingBeacons(in: region as! CLBeaconRegion)
-                print("===== Beacon Found, Start Ranging =====")
+                locationManager.startRangingBeacons(in: self.region)
+                print("===== Beacon Found, Start Ranging \(self.region)")
             }
         }
     }
@@ -68,20 +65,26 @@ class ProductTableViewController: UITableViewController, CLLocationManagerDelega
         {
             if CLLocationManager.isRangingAvailable()
             {
-                locationManager.stopRangingBeacons(in: region as! CLBeaconRegion)
+                locationManager.stopRangingBeacons(in: self.region)
                 print("===== Becon Lost, Stop Ranging =====")
             }
         }
     }
     
     func locationManager(_ manager: CLLocationManager, didRangeBeacons beacons: [CLBeacon], in region: CLBeaconRegion) {
+        print("\(beacons.count) beacons found in this region")
+        
         var nearbyBeacon: [IBeacon] = []
         
         for beacon in beacons
         {
-            if let index = beaconList.index(where: {$0.uuid == beacon.proximityUUID.uuidString})
+            print("Beacon Found: UUID:\(beacon.proximityUUID.uuidString), major:\(beacon.major) minor:\(beacon.minor) proximity:\(beacon.proximity.rawValue)")
+            if let index = beaconList.index(where: {$0.uuid == beacon.proximityUUID.uuidString &&
+                                                    $0.major == beacon.major.intValue &&
+                                                    $0.minor == beacon.minor.intValue})
             {
                 nearbyBeacon.append(beaconList[index])
+                print("\(beaconList[index].section.name) is nearby")
             }
         }
         let oldList = [Section](priorityProductList.getSections())

@@ -74,7 +74,10 @@ class DataLoader
                 for beacon in beacons
                 {
                     let beacon = beacon as! [String: Any]
-                    result.append(IBeacon(uuid: beacon["uuid"] as! String, section: beacon["section"] as! String))
+                    result.append(IBeacon(uuid: beacon["uuid"] as! String,
+                                          major: beacon["major"] as! Int,
+                                          minor: beacon["minor"] as! Int,
+                                          section: beacon["section"] as! String))
                 }
                 
                 return result

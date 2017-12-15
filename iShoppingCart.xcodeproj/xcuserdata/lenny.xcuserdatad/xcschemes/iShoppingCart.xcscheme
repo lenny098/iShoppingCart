@@ -40,10 +40,22 @@
             </BuildableReference>
             <SkippedTests>
                <Test
+                  Identifier = "ProductTest">
+               </Test>
+               <Test
+                  Identifier = "TestDataLoader">
+               </Test>
+               <Test
                   Identifier = "TestIBeaconReceiver">
                </Test>
                <Test
+                  Identifier = "TestPriorityProductList">
+               </Test>
+               <Test
                   Identifier = "TestQRCodeGenerator">
+               </Test>
+               <Test
+                  Identifier = "TestShoppingCart">
                </Test>
             </SkippedTests>
          </TestableReference>
