@@ -42,7 +42,7 @@ class CartTableViewCell: UITableViewCell {
         AppDelegate.shoppingCart.addProduct(product: product!)
         update()
     }
-    
+
     func update() {
         let count = AppDelegate.shoppingCart.getCount(product: self.product!)
         if count > 0 {

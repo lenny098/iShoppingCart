@@ -38,7 +38,14 @@ class ProductTableViewCell: UITableViewCell {
     }
     
     @IBAction func delItem(_ sender: UIButton) {
+        AppDelegate.shoppingCart.removeProduct(product: product!)
+        
+        NotificationCenter.default.post(name: NSNotification.Name(rawValue: "reloadCart"), object: nil)
+        saveCart()
+        
+        UIView.transition(with: countLabel, duration: 0.5, options: .transitionFlipFromBottom, animations: {self.countLabel.text = String(AppDelegate.shoppingCart.getCount(product: self.product!))}, completion: nil)
     }
+    
     private func saveCart()
     {
         let successful = NSKeyedArchiver.archiveRootObject(AppDelegate.shoppingCart, toFile: (ShoppingCart.ArchiveURL?.path)!)

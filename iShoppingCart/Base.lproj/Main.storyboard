@@ -28,11 +28,13 @@
             </objects>
             <point key="canvasLocation" x="0.0" y="0.0"/>
         </scene>
-        <!--Item-->
+        <!--Checkout-->
         <scene sceneID="cCE-hW-dH8">
             <objects>
                 <navigationController id="wmg-i2-CsY" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="Item" id="bPm-Fs-mGe"/>
+                    <tabBarItem key="tabBarItem" title="Checkout" id="bPm-Fs-mGe">
+                        <inset key="imageInsets" minX="0.0" minY="41" maxX="0.0" maxY="25"/>
+                    </tabBarItem>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="5gr-Dv-RdJ">
                         <rect key="frame" x="0.0" y="20" width="375" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
@@ -199,9 +201,9 @@
                     </tableView>
                     <tabBarItem key="tabBarItem" systemItem="downloads" id="zQh-N7-bRC"/>
                     <navigationItem key="navigationItem" id="4JM-je-efr">
-                        <barButtonItem key="rightBarButtonItem" title="Checkout" style="plain" id="VvQ-W3-bB5">
+                        <barButtonItem key="rightBarButtonItem" title="QR code Checkout" style="plain" id="VvQ-W3-bB5">
                             <connections>
-                                <segue destination="gTG-P9-kbT" kind="presentation" identifier="ShowQRCode" id="BfK-7U-cN2"/>
+                                <segue destination="gTG-P9-kbT" kind="presentation" identifier="ShowQRCode" modalTransitionStyle="flipHorizontal" id="BfK-7U-cN2"/>
                             </connections>
                         </barButtonItem>
                     </navigationItem>
@@ -245,16 +247,16 @@
                         </barButtonItem>
                         <barButtonItem key="rightBarButtonItem" systemItem="done" id="GRt-FM-uuR">
                             <connections>
-                                <segue destination="fEP-kj-cpP" kind="unwind" unwindAction="unwindToCartWithSender:" id="V6G-xv-Nqo"/>
+                                <action selector="doneButt:" destination="eJU-V7-b2Y" id="hBI-b2-Yno"/>
                             </connections>
                         </barButtonItem>
                     </navigationItem>
                     <connections>
                         <outlet property="qrView" destination="eeL-bg-jU4" id="Icj-de-1us"/>
+                        <segue destination="49e-Tb-3d3" kind="presentation" identifier="backcart" id="cZl-qs-8uh"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="tQP-jb-Qek" userLabel="First Responder" sceneMemberID="firstResponder"/>
-                <exit id="fEP-kj-cpP" userLabel="Exit" sceneMemberID="exit"/>
             </objects>
             <point key="canvasLocation" x="2470" y="1223"/>
         </scene>

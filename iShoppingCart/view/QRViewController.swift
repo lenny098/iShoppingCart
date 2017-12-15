@@ -27,6 +27,34 @@ class QRViewController: UIViewController {
         dismiss(animated: true, completion: nil)
     }
     
+    @IBAction func doneButt(_ sender: Any) {
+        let cleanAlert = UIAlertController(title: "Cleaning Alert", message: "Are you sure that you finished check-out?", preferredStyle: .alert)
+        let cleanAction = UIAlertAction(title: "✓ Yes", style: .default){
+            action in
+            self.performSegue(withIdentifier: "backcart", sender: self)
+            AppDelegate.shoppingCart.clear()
+            print("Clearing Shopping Cart")
+            self.saveCart()
+        }
+        let cancelAction = UIAlertAction(title: "✕ No", style: .default)
+        cleanAlert.addAction(cleanAction)
+        cleanAlert.addAction(cancelAction)
+        
+        present(cleanAlert, animated: true)
+    }
+    
+    private func saveCart()
+    {
+        let successful = NSKeyedArchiver.archiveRootObject(AppDelegate.shoppingCart, toFile: (ShoppingCart.ArchiveURL?.path)!)
+        if successful
+        {
+            print("Saved")
+        }
+        else
+        {
+            print("Saving Failed")
+        }
+    }
     /*
     // MARK: - Navigation
 
