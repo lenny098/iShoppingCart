@@ -23,11 +23,11 @@ class ProductTableViewController: UITableViewController, CLLocationManagerDelega
         NotificationCenter.default.addObserver(self, selector: #selector(reloadList), name: NSNotification.Name(rawValue: "reloadList"), object: nil)
         
         locationManager.delegate = self
+        locationManager.requestAlwaysAuthorization()
         
         if CLLocationManager.isMonitoringAvailable(for: CLBeaconRegion.self)
         {
-            locationManager.requestAlwaysAuthorization()
-            
+
             //Assume all beacons has the same UUID
             locationManager.startMonitoring(for: region)
             
@@ -126,7 +126,12 @@ class ProductTableViewController: UITableViewController, CLLocationManagerDelega
     
     override func tableView(_ tableView: UITableView, titleForHeaderInSection section: Int) -> String?
     {
-        return priorityProductList.getSections()[section].name
+        if section == 0 {
+            return priorityProductList.getSections()[section].name + " (Possibly Near)"
+        } else {
+            return priorityProductList.getSections()[section].name
+        }
+        
     }
 
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
