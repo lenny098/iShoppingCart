@@ -31,9 +31,10 @@ class ShoppingCart: NSObject, NSCoding
     
     func removeProduct(product: Product) {
         if products[product] != nil {
-            if products[product]! > 0 {
+            if products[product]! > 1 {
                 products[product]! -= 1
-            }else{
+            }
+            else {
                 products[product] = nil
             }
         }
