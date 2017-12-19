@@ -73,11 +73,9 @@ class CartTableViewController: UITableViewController {
     @IBAction func unwindToCart(sender: UIStoryboardSegue)
     {
         AppDelegate.shoppingCart.clear()
-        checkoutPriceLabel.text = String(format:"Total: $ %.1f", AppDelegate.shoppingCart.getTotalPrice())
-        self.tableView.reloadData()
+        reloadCart()
         NotificationCenter.default.post(name: NSNotification.Name(rawValue: "reloadList"), object: nil)
         print("Clearing Shopping Cart")
-        saveCart()
     }
 
     override func didReceiveMemoryWarning() {

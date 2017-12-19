@@ -44,6 +44,10 @@ class CartTableViewCell: UITableViewCell {
     }
 
     func update() {
+        NotificationCenter.default.post(name: NSNotification.Name(rawValue: "reloadTotal"), object: nil)
+        NotificationCenter.default.post(name: NSNotification.Name(rawValue: "reloadCart"), object: nil)
+        NotificationCenter.default.post(name: NSNotification.Name(rawValue: "reloadList"), object: nil)
+        /*
         let count = AppDelegate.shoppingCart.getCount(product: self.product!)
         if count > 0 {
             UIView.transition(with: countLabel, duration: 0.5, options: .transitionFlipFromBottom, animations: {self.countLabel.text = String(count)}, completion: nil)
@@ -57,5 +61,6 @@ class CartTableViewCell: UITableViewCell {
             NotificationCenter.default.post(name: NSNotification.Name(rawValue: "reloadCart"), object: nil)
             NotificationCenter.default.post(name: NSNotification.Name(rawValue: "reloadList"), object: nil)
         }
+         */
     }
 }

@@ -29,17 +29,17 @@ class QRViewController: UIViewController {
     
     @IBAction func doneButt(_ sender: Any) {
         let alertTitle = "Cleaning Alert"
-        let cleaningMsg = "Are you sure that you finished check-out?"
+        let cleaningMsg = "Empty the Shopping Cart?"
         
         let cleanAlert = UIAlertController(title: alertTitle, message: cleaningMsg, preferredStyle: .alert)
-        let cleanAction = UIAlertAction(title: "✓ Yes", style: .default){
+        let cleanAction = UIAlertAction(title: "✓ Yes", style: .destructive) {
             action in
-            self.performSegue(withIdentifier: "backcart", sender: self)
-            AppDelegate.shoppingCart.clear()
-            print("Clearing Shopping Cart")
-            self.saveCart()
+            self.performSegue(withIdentifier: "unwindToCart", sender: self)
         }
-        let cancelAction = UIAlertAction(title: "✕ No", style: .default)
+        let cancelAction = UIAlertAction(title: "✕ No", style: .cancel) {
+            action in
+            self.dismiss(animated: true, completion: nil)
+        }
         cleanAlert.addAction(cleanAction)
         cleanAlert.addAction(cancelAction)
         
