@@ -14,12 +14,14 @@ class IBeacon : Equatable
     let major: Int
     let minor: Int
     let section : Section
+    let strength : Double
     
     init(uuid: String, major: Int, minor: Int, section: String) {
         self.uuid = uuid
         self.major = major
         self.minor = minor
         self.section = Section(name: section)
+        self.strength = 0
     }
     
     static func ==(lhs: IBeacon, rhs: IBeacon) -> Bool {

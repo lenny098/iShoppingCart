@@ -79,9 +79,11 @@ class ProductTableViewController: UITableViewController, CLLocationManagerDelega
         for beacon in beacons
         {
             print("Beacon Found: UUID:\(beacon.proximityUUID.uuidString), major:\(beacon.major) minor:\(beacon.minor) proximity:\(beacon.proximity.rawValue)")
+            
             if let index = beaconList.index(where: {$0.uuid == beacon.proximityUUID.uuidString &&
                                                     $0.major == beacon.major.intValue &&
-                                                    $0.minor == beacon.minor.intValue})
+                                                    $0.minor == beacon.minor.intValue &&
+                                                    $0.strength == beacon.accuracy})
             {
                 nearbyBeacon.append(beaconList[index])
                 print("\(beaconList[index].section.name) is nearby")
@@ -134,6 +136,31 @@ class ProductTableViewController: UITableViewController, CLLocationManagerDelega
         
     }
 
+    override func tableView(_ tableView: UITableView, viewForHeaderInSection section: Int) -> UIView? {
+        let headerView = UIView(frame: CGRect(x:0, y:0, width:self.tableView.frame.width, height:22))
+        headerView.backgroundColor = UIColor.gray
+        
+        let sectionImage = UIImageView(frame: CGRect(x:2, y:4, width:29, height:20))
+        
+        let totalSectionCount = priorityProductList.getSections().count
+        
+        if section == 0 {
+            sectionImage.image = UIImage(named: "wifiSignalHigh")
+        }else if section < (totalSectionCount/2){
+            sectionImage.image = UIImage(named: "wifiSignalMedium")
+        }else{
+            sectionImage.image = UIImage(named: "wifiSignalLow")
+        }
+        
+        let sectionName = UILabel(frame: CGRect(x:35, y:2, width:self.tableView.frame.width-35, height:22))
+        sectionName.text = priorityProductList.getSections()[section].name
+        
+        headerView.addSubview(sectionImage)
+        headerView.addSubview(sectionName)
+        
+        return headerView
+    }
+    
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "ProductTableViewCell", for: indexPath) as? ProductTableViewCell
         let product = priorityProductList.getProductsBySection(priority: indexPath.section)[indexPath.row]
