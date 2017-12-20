@@ -32,9 +32,7 @@
         <scene sceneID="cCE-hW-dH8">
             <objects>
                 <navigationController id="wmg-i2-CsY" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="Checkout" id="bPm-Fs-mGe">
-                        <inset key="imageInsets" minX="0.0" minY="41" maxX="0.0" maxY="25"/>
-                    </tabBarItem>
+                    <tabBarItem key="tabBarItem" title="Checkout" image="tabBarCartIcon" id="bPm-Fs-mGe"/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="5gr-Dv-RdJ">
                         <rect key="frame" x="0.0" y="20" width="375" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
@@ -199,7 +197,7 @@
                             <outlet property="delegate" destination="5Uf-WP-9aR" id="qpp-yt-qRi"/>
                         </connections>
                     </tableView>
-                    <tabBarItem key="tabBarItem" systemItem="downloads" id="zQh-N7-bRC"/>
+                    <tabBarItem key="tabBarItem" title="Checkout" image="tabBarCartIcon" id="zQh-N7-bRC"/>
                     <navigationItem key="navigationItem" id="4JM-je-efr">
                         <barButtonItem key="rightBarButtonItem" title="QR code Checkout" style="plain" id="VvQ-W3-bB5">
                             <connections>
@@ -358,7 +356,7 @@
                             <outlet property="delegate" destination="quv-bW-l7t" id="Fn6-K1-C9l"/>
                         </connections>
                     </tableView>
-                    <tabBarItem key="tabBarItem" systemItem="search" id="dXh-la-k7Q"/>
+                    <tabBarItem key="tabBarItem" title="List" image="tabBarListIcon" id="dXh-la-k7Q"/>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="9Kg-GA-YEc" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -383,4 +381,8 @@
             <point key="canvasLocation" x="1505" y="1223"/>
         </scene>
     </scenes>
+    <resources>
+        <image name="tabBarCartIcon" width="24" height="24"/>
+        <image name="tabBarListIcon" width="24" height="24"/>
+    </resources>
 </document>
