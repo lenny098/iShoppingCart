@@ -105,9 +105,20 @@ class ProductTableViewController: UITableViewController, CLLocationManagerDelega
             }
         }
         
-        self.tableView.reloadSections(indexSet, with: .automatic)
+        // For cases where priority unchanged but proximity changed
+        if beaconStrengths != nearbySection
+        {
+            for section in Set(beaconStrengths.keys).union(Set(nearbySection.keys))
+            {
+                if beaconStrengths[section] != nearbySection[section]
+                {
+                    indexSet.insert(priorityProductList.getSections().index(of: section)!)
+                }
+            }
+            beaconStrengths = nearbySection
+        }
         
-        beaconStrengths = nearbySection
+        self.tableView.reloadSections(indexSet, with: .automatic)
         
         print("===== Beacon updated, reloading =====")
     }
