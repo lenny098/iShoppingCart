@@ -16,6 +16,7 @@ class ProductTableViewController: UITableViewController, CLLocationManagerDelega
     let region = CLBeaconRegion(proximityUUID: UUID(uuidString: "B5B182C7-EAB1-4988-AA99-B5C1517008D9")!, identifier: "iBeacon")
     
     var priorityProductList = PriorityProductList(products: [])
+    var beaconStrengths = [Section: CLProximity]()
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -75,6 +76,7 @@ class ProductTableViewController: UITableViewController, CLLocationManagerDelega
         print("\(beacons.count) beacons found in this region")
         
         var nearbyBeacon: [IBeacon] = []
+        var nearbySection = [Section: CLProximity]()
         
         for beacon in beacons
         {
@@ -82,17 +84,18 @@ class ProductTableViewController: UITableViewController, CLLocationManagerDelega
             
             if let index = beaconList.index(where: {$0.uuid == beacon.proximityUUID.uuidString &&
                                                     $0.major == beacon.major.intValue &&
-                                                    $0.minor == beacon.minor.intValue &&
-                                                    $0.strength == beacon.accuracy})
+                                                    $0.minor == beacon.minor.intValue
+                                                    // && $0.strength == beacon.accuracy // this seems buggy
+                                                    })
             {
                 nearbyBeacon.append(beaconList[index])
+                nearbySection[beaconList[index].section] = beacon.proximity
                 print("\(beaconList[index].section.name) is nearby")
             }
         }
         let oldList = [Section](priorityProductList.getSections())
         priorityProductList.updateList(nearbyBeacons: nearbyBeacon)
         var indexSet = IndexSet()
-        
         
         for i in 0..<oldList.count
         {
@@ -103,6 +106,8 @@ class ProductTableViewController: UITableViewController, CLLocationManagerDelega
         }
         
         self.tableView.reloadSections(indexSet, with: .automatic)
+        
+        beaconStrengths = nearbySection
         
         print("===== Beacon updated, reloading =====")
     }
@@ -138,11 +143,11 @@ class ProductTableViewController: UITableViewController, CLLocationManagerDelega
 
     override func tableView(_ tableView: UITableView, viewForHeaderInSection section: Int) -> UIView? {
         let headerView = UIView(frame: CGRect(x:0, y:0, width:self.tableView.frame.width, height:22))
-        headerView.backgroundColor = UIColor.gray
+        headerView.backgroundColor = UITableView().separatorColor
         
         let sectionImage = UIImageView(frame: CGRect(x:2, y:4, width:29, height:20))
         
-        let totalSectionCount = priorityProductList.getSections().count
+        /*let totalSectionCount = priorityProductList.getSections().count
         
         if section == 0 {
             sectionImage.image = UIImage(named: "wifiSignalHigh")
@@ -150,6 +155,23 @@ class ProductTableViewController: UITableViewController, CLLocationManagerDelega
             sectionImage.image = UIImage(named: "wifiSignalMedium")
         }else{
             sectionImage.image = UIImage(named: "wifiSignalLow")
+        }*/
+        
+        if let proximity = self.beaconStrengths[priorityProductList.getSections()[section]] {
+            switch proximity {
+                case .immediate:
+                    sectionImage.image = UIImage(named: "wifiSignalHigh")
+                case .near:
+                    sectionImage.image = UIImage(named: "wifiSignalMedium")
+                case .far:
+                    sectionImage.image = UIImage(named: "wifiSignalLow")
+                default:
+                    sectionImage.image = UIImage(named: "wifiSignalNone")
+            }
+        }
+        else
+        {
+            sectionImage.image = UIImage(named: "wifiSignalNone")
         }
         
         let sectionName = UILabel(frame: CGRect(x:35, y:2, width:self.tableView.frame.width-35, height:22))
