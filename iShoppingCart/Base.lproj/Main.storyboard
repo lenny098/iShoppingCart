@@ -282,44 +282,31 @@
                                                     <rect key="frame" x="0.0" y="0.0" width="375.5" height="43.5"/>
                                                     <subviews>
                                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" preferredMaxLayoutWidth="50" translatesAutoresizingMaskIntoConstraints="NO" id="wgv-lL-1lL">
-                                                            <rect key="frame" x="0.0" y="0.0" width="105" height="43.5"/>
+                                                            <rect key="frame" x="0.0" y="0.0" width="115" height="43.5"/>
                                                             <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                             <nil key="textColor"/>
                                                             <nil key="highlightedColor"/>
                                                         </label>
                                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="FFO-nx-h0N">
-                                                            <rect key="frame" x="105" y="0.0" width="105.5" height="43.5"/>
+                                                            <rect key="frame" x="115" y="0.0" width="115.5" height="43.5"/>
                                                             <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                             <nil key="textColor"/>
                                                             <nil key="highlightedColor"/>
                                                         </label>
                                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" text="" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="W0s-ZZ-Jul">
-                                                            <rect key="frame" x="210.5" y="0.0" width="105" height="43.5"/>
+                                                            <rect key="frame" x="230.5" y="0.0" width="115" height="43.5"/>
                                                             <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                             <nil key="textColor"/>
                                                             <nil key="highlightedColor"/>
                                                         </label>
-                                                        <stackView opaque="NO" contentMode="scaleToFill" ambiguous="YES" translatesAutoresizingMaskIntoConstraints="NO" id="qea-TR-74G">
-                                                            <rect key="frame" x="315.5" y="0.0" width="60" height="43.5"/>
-                                                            <subviews>
-                                                                <button opaque="NO" contentMode="scaleToFill" ambiguous="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="KKH-j8-lZB">
-                                                                    <rect key="frame" x="0.0" y="0.0" width="30" height="43.5"/>
-                                                                    <fontDescription key="fontDescription" name=".AppleSystemUIFont" family=".AppleSystemUIFont" pointSize="36"/>
-                                                                    <state key="normal" title="+"/>
-                                                                    <connections>
-                                                                        <action selector="addToCart:" destination="XUW-3G-Lzb" eventType="touchUpInside" id="9KQ-tf-vKW"/>
-                                                                    </connections>
-                                                                </button>
-                                                                <button opaque="NO" contentMode="scaleToFill" ambiguous="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="yXS-LX-Nqf">
-                                                                    <rect key="frame" x="30" y="0.0" width="30" height="43.5"/>
-                                                                    <fontDescription key="fontDescription" type="system" pointSize="41"/>
-                                                                    <state key="normal" title="-"/>
-                                                                    <connections>
-                                                                        <action selector="delItem:" destination="XUW-3G-Lzb" eventType="touchUpInside" id="HIa-mj-Vqd"/>
-                                                                    </connections>
-                                                                </button>
-                                                            </subviews>
-                                                        </stackView>
+                                                        <button opaque="NO" contentMode="scaleToFill" ambiguous="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="KKH-j8-lZB">
+                                                            <rect key="frame" x="345.5" y="0.0" width="30" height="43.5"/>
+                                                            <fontDescription key="fontDescription" name=".AppleSystemUIFont" family=".AppleSystemUIFont" pointSize="36"/>
+                                                            <state key="normal" title="+"/>
+                                                            <connections>
+                                                                <action selector="addToCart:" destination="XUW-3G-Lzb" eventType="touchUpInside" id="9KQ-tf-vKW"/>
+                                                            </connections>
+                                                        </button>
                                                     </subviews>
                                                     <constraints>
                                                         <constraint firstItem="W0s-ZZ-Jul" firstAttribute="width" secondItem="wgv-lL-1lL" secondAttribute="width" id="BMJ-Pk-Chr"/>
