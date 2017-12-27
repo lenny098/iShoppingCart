@@ -18,7 +18,10 @@ class CartTableViewCell: UITableViewCell {
     @IBOutlet weak var discountNameLabel: UILabel!
     @IBOutlet weak var discountPriceLabel: UILabel!
     @IBOutlet weak var discountCountLabel: UILabel!
+    @IBOutlet weak var warningIcon: UIImageView!
     @IBOutlet weak var totalDiscountLabel: UILabel!
+    
+    @IBOutlet weak var discountStack: UIStackView!
     
     var product: Product?
     

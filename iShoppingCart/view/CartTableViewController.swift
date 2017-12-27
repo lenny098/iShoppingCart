@@ -108,7 +108,7 @@ class CartTableViewController: UITableViewController {
         cell?.countLabel.text = String(format:"%3d", count)
         cell?.totalPriceLabel.text = String(format:"$ %5.1f", product.price * Double(count))
         
-        if let coupon = product.coupon, AppDelegate.shoppingCart.getActivatedDiscount(product: product) > 0
+        if let coupon = product.coupon
         {
             cell?.discountNameLabel.text = coupon.name
             cell?.discountPriceLabel.text = String(format:"$ %5.1f", coupon.discount)
@@ -118,15 +118,25 @@ class CartTableViewController: UITableViewController {
             
             cell?.discountNameLabel.isHidden = false
             cell?.discountPriceLabel.isHidden = false
-            cell?.discountCountLabel.isHidden = false
             cell?.totalDiscountLabel.isHidden = false
+            
+            if AppDelegate.shoppingCart.isSaverWarning(product: product){
+                cell?.warningIcon.isHidden = false
+                cell?.discountCountLabel.isHidden = true
+            }
+            else {
+                cell?.warningIcon.isHidden = true
+                cell?.discountCountLabel.isHidden = false
+            }
         }
         else
         {
             cell?.discountNameLabel.isHidden = true
             cell?.discountPriceLabel.isHidden = true
-            cell?.discountCountLabel.isHidden = true
+            //cell?.discountCountLabel.isHidden = true
             cell?.totalDiscountLabel.isHidden = true
+            //cell?.warningIcon.isHidden = true
+            cell?.discountStack.isHidden = true
         }
         
         
