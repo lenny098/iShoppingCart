@@ -53,7 +53,7 @@ class ShoppingCart: NSObject, NSCoding
     }
     
     func isSaverWarning(product: Product) -> Bool {
-        return (product.coupon?.productCount)! > 1 && getActivatedDiscount(product: product) < 1
+        return getActivatedDiscount(product: product) < 1
     }
     
     func getTotalPrice() -> Double {

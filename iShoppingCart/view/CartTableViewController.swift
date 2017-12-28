@@ -133,9 +133,7 @@ class CartTableViewController: UITableViewController {
         {
             cell?.discountNameLabel.isHidden = true
             cell?.discountPriceLabel.isHidden = true
-            //cell?.discountCountLabel.isHidden = true
             cell?.totalDiscountLabel.isHidden = true
-            //cell?.warningIcon.isHidden = true
             cell?.discountStack.isHidden = true
         }
         
